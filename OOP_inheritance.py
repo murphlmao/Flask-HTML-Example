@@ -9,7 +9,7 @@ class Dog(Animal):
     def speak(self):
         super().speak()
         print("Woof!")
-        
+           
 class Cat(Animal):
     def speak(self):
         super().speak()
