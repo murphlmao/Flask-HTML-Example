@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
@@ -10,6 +10,12 @@ def hello_world():
 def homepage():
 	test = '10'
 	return render_template('index.html', data=test) # data is what you use to call this object in the html
+
+@app.route('/test')
+def test():
+	test = ['test1','test2','test3']
+	return jsonify(test) # data is what you use to call this object in the html
+
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0')
